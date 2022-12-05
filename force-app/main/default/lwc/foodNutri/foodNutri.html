@@ -1,0 +1,66 @@
+<template>
+    <lightning-card  title="Food Nutrition Information" icon-name="standard:action_list_component">
+        <div class="slds-grid slds-gutters slds-m-left_xxx-small">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-combobox 
+                    name="progress"
+                    label="Select Fruit"
+                    value={value}
+                    placeholder="Select Fruit"
+                    options={options}
+                    onchange={handleChange}>
+            </lightning-combobox>
+            <div if:true={show}>
+                <lightning-input type="text" name="fruitName" data-id="fruitName" label="Enter fruit or vegetable name"></lightning-input>
+            </div>
+            <br/>
+            <lightning-button variant="brand" label="Get Nutrition" title="Get Nutrition" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <section class="performance-facts">
+                    <header class="performance-facts__header">
+                      <h1 class="performance-facts__title">Nutrition Facts</h1>
+                    </header>
+                    <table class="performance-facts__table">
+                      <tbody>
+                        <tr>
+                          <th colspan="2">
+                            <b>Calories</b>
+                          </th>
+                          <td if:true={fruitInfo}>
+                            <b> {fruitInfo.calories.value} {fruitInfo.calories.unit}</b>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th colspan="2">
+                            <b>Fat</b>
+                          </th>
+                          <td if:true={fruitInfo}>
+                            <b> {fruitInfo.fat.value} {fruitInfo.fat.unit}</b>
+                          </td>
+                        </tr>
+                     
+                        <tr>
+                          <th colspan="2">
+                            <b>Total Carbohydrate</b>
+                          </th>
+                          <td if:true={fruitInfo}>
+                            <b> {fruitInfo.carbs.value} {fruitInfo.carbs.unit}</b>
+                          </td>
+                        </tr>
+                     
+                        <tr class="thick-end">
+                          <th colspan="2">
+                            <b>Protein</b>
+                          </th>
+                          <td if:true={fruitInfo}>
+                            <b> {fruitInfo.protein.value} {fruitInfo.protein.unit}</b>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </section>
+            </div>
+        </div>
+   </lightning-card>
+</template>

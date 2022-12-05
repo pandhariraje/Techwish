@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium">
+            <table>
+            <tr>
+                <td>
+                    <lightning-button name="successbtn" label="success" variant="brand" onclick={changeMessage}></lightning-button>
+                </td>
+                <td>
+                    <lightning-button name="errorbtn" label="error" variant="brand" onclick={changeMessage}></lightning-button>
+                </td>
+                <td>
+                    <lightning-button name="warningbtn" label="warning" variant="brand" onclick={changeMessage}></lightning-button>
+                </td>
+                <td>
+                    <lightning-button name="infobtn" label="info" variant="brand" onclick={changeMessage}></lightning-button>
+                </td>
+            </tr>
+        </table>
+        </div>
+    </lightning-card>
+</template>

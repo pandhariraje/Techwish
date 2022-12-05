@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Account Data">
+        <div class="slds-m-around_medium">
+             <template if:true={uid.data}>
+                <div class="slds-grid slds-wrap">
+                <template for:each={uid.data} for:item="ac">
+                    
+                    <div class="slds-col slds-size_1-of-5" key={ac.Id}>
+                        <lightning-card title={ac.Name}>
+                            <p> AccountName:{ac.Name}</p> 
+                            <p>BillingCity:{ac.BillingCity}</p>
+                               <p>Annual:{ac.AnnualRevenue}</p>
+                           </lightning-card>
+                    
+                    </div>
+                </template>
+            </div>
+            </template>
+            <!--<template if:true={uid.error}>
+                <c-error-panel errors={uid.error}></c-error-panel>
+            </template>-->
+        </div>
+    </lightning-card>
+</template>
