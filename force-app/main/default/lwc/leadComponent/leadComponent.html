@@ -1,0 +1,62 @@
+<template>
+  <lightning-card title="Create Lead Record">
+      <div style="margin-left: 6%" if:true={error}>
+          <lightning-badge label={error} style="color: red;"></lightning-badge>
+      </div>
+
+      <template if:true={lccRecord}>
+          <div class="slds-m-around--xx-large">
+              <div class="container-fluid">
+                  <div class="form-group">
+                      <lightning-input label="Enter Lead Name" name="lccName" required="required" type="text" value={scoreObjName} onchange={handleScoreChange}></lightning-input>
+                  </div>
+                  <div class="form-group">
+                      <lightning-input label="Enter Phone Number" name="lccPhone" type="tel" value={scoreObjPhone} onchange={handleScoreChange}></lightning-input>
+                  </div>
+                  <div class="form-group">
+                      <lightning-input label="Enter email" name="lccEmail" required="required" type="email" value={scoreObjEmail} onchange={handleScoreChange}></lightning-input>
+                  </div>
+                  <div class="form-group">
+                    <lightning-input label="Enter Company" name="lccCompany" required="text" type="text" value={scoreObjCompany} onchange={handleScoreChange}></lightning-input>
+                </div>
+                <div class="form-group">
+                  <lightning-input label="Enter Product" name="lccProduct" required="required" type="number" value={scoreObjProduct} onchange={handleScoreChange}></lightning-input>
+              </div>
+                  <div class="form-group">
+                      <lightning-input label="Enter Quantity" name="lccQuantity" type="number" value={scoreObjQuantity} onchange={handleScoreChange}></lightning-input>
+                  </div>
+                  <!-- <div class="form-group">
+                    <lightning-input label="Enter Score" name="lccScore" type="number" value={scoreObjScore} onchange={handleScoreChange}></lightning-input>
+                </div> -->
+              </div>
+              <br/>
+              <lightning-button label="Submit" onclick={handleSave} variant="brand"></lightning-button>
+          </div>
+      </template>
+  </lightning-card>
+
+
+  -<lightning-card title="Create New Lead">
+    <lightning-record-edit-form record-id={recordId} object-api-name="Lead"
+            onsuccess={handleSuccess} onsubmit ={handleSubmit}>
+        <lightning-messages>
+        </lightning-messages>
+        <lightning-input-field field-name="Name">
+        </lightning-input-field>
+        <lightning-input-field field-name="Email">
+        </lightning-input-field>
+        <lightning-input-field field-name="Phone">
+        </lightning-input-field>
+        <lightning-input-field field-name="Company">
+        </lightning-input-field>
+        <lightning-input-field field-name="Quantity__c">
+        </lightning-input-field>
+        <lightning-input-field field-name="Product__c">
+        </lightning-input-field>
+        <lightning-input-field field-name="Score__c">
+        </lightning-input-field>
+        <lightning-button class="slds-m-top_small" variant="brand" type="submit" name="Create" label="Create Lead">
+        </lightning-button>
+    </lightning-record-edit-form>
+</lightning-card>
+</template>

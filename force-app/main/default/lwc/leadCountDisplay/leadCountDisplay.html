@@ -1,0 +1,49 @@
+<template>
+    
+    <lightning-card title="Lead data"><br/>
+       <c-lead-child></c-lead-child>
+        
+    </lightning-card>
+
+
+
+    
+        <!-- <lightning-card title="Display Lead Data"> 
+            <lightning-output-field label="Lead Data" field-name={countData}></lightning-output-field>
+             -->
+    
+            <div class="slds-p-around_medium">
+                <template if:true={leadList}>
+                    <div class="slds-grid">
+                    <template for:each={leadList} for:item="lcc">
+                        <div class="custom-box slds-box slds-p-around_medium slds-text-align_center" key={lcc.Id}>
+                            <!-- <div class="slds-col slds-size_1-of-1 slds-p-around_medium"> -->
+                            <lightning-card  class="slds-p-around_medium">
+                             <p>Lead Name:{lcc.Name}</p>
+                             <p>Lead Phone:{lcc.Phone}</p>
+                             <p>Lead Email:{lcc.Email}</p>
+                             <p>Lead Product:{lcc.Product__c}</p>
+                             <p>Lead Quantity:{lcc.Quantity__c}</p>
+                             <p>Score:{lcc.Score__c}</p>
+                            </lightning-card>
+                
+                  </div>
+                    </template>
+                </div>
+                </template>
+                <!-- <template if:false={lccdata.data}>
+                    <div>Sorry No Record Exist</div>
+                </template> -->
+            </div>
+        
+        <!--  </lightning-card>
+    <div style="height: 500px;">
+    <template if:true={leadList}>
+         <lightning-datatable
+                 key-field="id"
+                 data={leadList}
+                 columns={columns}>
+         </lightning-datatable>
+    </template>
+    </div> -->
+    </template>

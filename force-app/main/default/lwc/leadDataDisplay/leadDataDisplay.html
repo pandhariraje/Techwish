@@ -1,0 +1,61 @@
+<template>
+   
+        <lightning-card title="Custom Lead create" class="slds-p-around_medium">
+            
+            <lightning-input label="Lead Name" onchange={handleName}  class="slds-p-around_medium"></lightning-input>
+            <lightning-input label="Email" onchange={handleEmail}  class="slds-p-around_medium"></lightning-input>
+            <lightning-input label="Company" onchange={handleCompany}  class="slds-p-around_medium"></lightning-input>
+            <lightning-input label="Phone" onchange={handlePhone}  class="slds-p-around_medium"></lightning-input>
+            <lightning-input label="Product" onchange={handleProduct}  class="slds-p-around_medium"></lightning-input>
+            <lightning-input label="Quantity" onchange={handleQuantity}  class="slds-p-around_medium"></lightning-input>
+
+          <lightning-input label="Score" onchange={handleScore} class="slds-p-around_medium"></lightning-input><br/>
+
+          <lightning-button label="Create New Lead" type="submit" variant="brand" onclick={createLead}></lightning-button>
+    </lightning-card>
+    <div class="slds-p-around_medium">
+        
+        <template if:true={lccData.data}>
+          <lightning-card title="Matching Records">
+            <div class="slds-grid slds-wrap">
+              <template for:each={lccData.data} for:item="lcc">
+                  <div key={lcc.Id}>
+                      <div class="slds-col slds-size_1-of-1 slds-p-around_medium">
+                        <p><b>LeadName:</b> &nbsp;{lcc.Name}</p>
+                        <p><b>Company:</b> &nbsp;{lcc.Company}</p>
+                        <p><b>Phone:</b> &nbsp;{lcc.Phone}</p>
+                        <p><b>Email:</b> &nbsp;{lcc.Email}</p>
+                        <p><b>Product:</b> &nbsp;{lcc.Product__c}</p>
+                        <p><b>Quantity:</b> &nbsp;{acc.Quantity__c}</p>
+                        <p><b>Score:</b> &nbsp;{acc.Score__c}</p>
+                      </div>
+                    </div>
+              </template>
+            </div>
+            </lightning-card>
+            </template>
+    </div>
+    <!--<lightning-card title="Create New Lead">
+        <lightning-record-edit-form record-id={recordId} object-api-name="Lead"
+                onsuccess={handleSuccess} onsubmit ={handleSubmit}>
+            <lightning-messages>
+            </lightning-messages>
+            <lightning-input-field field-name="Name">
+            </lightning-input-field>
+            <lightning-input-field field-name="Email">
+            </lightning-input-field>
+            <lightning-input-field field-name="Phone">
+            </lightning-input-field>
+            <lightning-input-field field-name="Company">
+            </lightning-input-field>
+            <lightning-input-field field-name="Quantity__c">
+            </lightning-input-field>
+            <lightning-input-field field-name="Product__c">
+            </lightning-input-field>
+            <lightning-input-field field-name="Score__c">
+            </lightning-input-field>
+            <lightning-button class="slds-m-top_small" variant="brand" type="submit" name="Create" label="Create Lead">
+            </lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>-->
+</template>
