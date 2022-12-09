@@ -19,12 +19,13 @@
                         <div class="custom-box slds-box slds-p-around_medium slds-text-align_center" key={lcc.Id}>
                             <!-- <div class="slds-col slds-size_1-of-1 slds-p-around_medium"> -->
                             <lightning-card  class="slds-p-around_medium">
-                             <p>Lead Name:{lcc.Name}</p>
+                             <!-- <p>Lead Name:{lcc.Name}</p> -->
+                             <lightning-button variant="Base" label={lcc.Name} value={lcc.Name} onclick={redirect}></lightning-button>
                              <p>Lead Phone:{lcc.Phone}</p>
                              <p>Lead Email:{lcc.Email}</p>
                              <p>Lead Product:{lcc.Product__c}</p>
                              <p>Lead Quantity:{lcc.Quantity__c}</p>
-                             <p>Score:{lcc.Score__c}</p>
+                             <p>Score:{lcc.DisplayValue__c}</p>
                             </lightning-card>
                 
                   </div>
@@ -47,3 +48,5 @@
     </template>
     </div> -->
     </template>
+
+   
