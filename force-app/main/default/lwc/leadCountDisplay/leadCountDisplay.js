@@ -1,11 +1,13 @@
-import { LightningElement, track, wire } from 'lwc';
+import { LightningElement, track, wire, api } from 'lwc';
 import getLeads from '@salesforce/apex/LeadCountDisplay.getLeads'
-export default class LeadCountDisplay extends LightningElement {
+import {NavigationMixin} from 'lightning/navigation';
+export default class LeadCountDisplay extends NavigationMixin (LightningElement) {
     @track columns = [
         { label: 'Name', fieldName: 'Name' },
         { label: 'Id', fieldName: 'Id'}
     ];
  
+    @track scoreRecoreId;
     @track leadList;
     count;
     
@@ -17,8 +19,5 @@ export default class LeadCountDisplay extends LightningElement {
           
         console.log(data); 
         } 
-   }
-   
-   // @wire (count) countData;
-       
+   }      
 }

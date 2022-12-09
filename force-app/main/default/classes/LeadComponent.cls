@@ -1,13 +1,14 @@
 public with sharing class LeadComponent {
         @AuraEnabled
-        public static Lead leadData(String score,String sname,String sphone,String semail, String scompany,Integer sproduct,Integer squantity,Integer lscore){
+        public static Lead leadData(String cname,String cphone,String cemail, String lcompany,Integer cproduct,Integer cquantity){
             Lead lobj=new Lead();
+            lobj.LastName=cname;
            // lobj.Name=sname;
-            lobj.Phone=sphone;
-            lobj.Email=semail;
-            lobj.Company=scompany;
-            lobj.Product__c=sproduct;
-            lobj.Quantity__c=squantity;
+            lobj.Phone=cphone;
+            lobj.Email=cemail;
+            lobj.Company=lcompany;
+            lobj.Product__c=cproduct;
+            lobj.Quantity__c=cquantity;
 
 
           insert lobj;

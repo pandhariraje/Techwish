@@ -1,7 +1,7 @@
 public with sharing class LeadCountDisplay {
     @AuraEnabled(cacheable=true)
     public static List<Lead> getLeads() {
-    return [SELECT Id, Name,Company, Phone,Email,Product__c,Quantity__c,Score__c FROM Lead LIMIT 5];
+    return [SELECT Id, Name,Company, Phone,Email,Product__c,Quantity__c,DisplayValue__c FROM Lead LIMIT 5];
     }
     @AuraEnabled(cacheable=true)
     public static integer getLead() {

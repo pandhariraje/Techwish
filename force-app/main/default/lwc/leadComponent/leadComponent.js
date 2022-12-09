@@ -2,9 +2,7 @@ import { LightningElement, track} from 'lwc';
 import {ShowToastEvent} from 'lightning/platformShowToastEvent';
 import saveLead from '@salesforce/apex/LeadComponent.leadData';
 import {NavigationMixin} from 'lightning/navigation';
-export default class LeadComponent extends NavigationMixin (LightningElement){
-    
-
+  export default class LeadComponent extends NavigationMixin (LightningElement) {
     @track scoreObjName;
     @track scoreObjPhone;
     @track scoreObjEmail;
@@ -29,7 +27,7 @@ export default class LeadComponent extends NavigationMixin (LightningElement){
         this.scoreObjEmail = event.target.value;  
       }
 
-      if(event.target.name == 'scoreCompany'){
+      if(event.target.name == 'sCompany'){
         this.scoreObjCompany = event.target.value;  
       }
       if(event.target.name == 'sproduct'){
@@ -44,7 +42,7 @@ export default class LeadComponent extends NavigationMixin (LightningElement){
  }
 
  submitAction(){
-  saveLead({sname:this.scoreObName,semail:this.scoreObjEmail,sphone:this.scoreObjPhone,scoreCompany:this.scoreObjPhone,sproduct:this.scoreObjProduct,scoreObjQuantity:this.squantity})
+  saveLead({cname:this.scoreObName,cemail:this.scoreObjEmail,cphone:this.scoreObjPhone,lcompany:this.scoreObjPhone,cproduct:this.scoreObjProduct,cquantity:this.scoreObjQuantity})
     .then(result=>{
         this.scoreRecoreId = result.Id;
         window.console.log('scoreRecoreId#Pandhari ' + this.scoreRecoreId);       

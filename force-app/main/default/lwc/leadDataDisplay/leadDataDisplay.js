@@ -1,6 +1,6 @@
     import { LightningElement, wire, api } from 'lwc';
 
-    import lccRecords from '@salesforce/apex/LeadDataDisplay.insertLead';
+    import lccRecords from '@salesforce/apex/LeadDataDisplay.displayLeadData'
     export default class LeadDataDisplay extends LightningElement {
         
      
@@ -48,9 +48,6 @@
         handleSuccess(event) {
             console.log('onsuccess event recordEditForm'+ event.detail.id);
         }
-    
-      
-    
     
        
 }

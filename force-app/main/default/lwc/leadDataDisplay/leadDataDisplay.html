@@ -9,7 +9,7 @@
             <lightning-input label="Product" onchange={handleProduct}  class="slds-p-around_medium"></lightning-input>
             <lightning-input label="Quantity" onchange={handleQuantity}  class="slds-p-around_medium"></lightning-input>
 
-          <lightning-input label="Score" onchange={handleScore} class="slds-p-around_medium"></lightning-input><br/>
+          <lightning-output-field label="Score" field-name="Score__c" class="slds-p-around_medium"></lightning-output-field><br/>
 
           <lightning-button label="Create New Lead" type="submit" variant="brand" onclick={createLead}></lightning-button>
     </lightning-card>
